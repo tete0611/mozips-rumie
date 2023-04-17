@@ -4,14 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node -r dotenv/config index.js dotenv_config_path=.env.master",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon -r dotenv/config index.js dotenv_config_path=.env.dev"
   },
   "author": "KYEONGMIN CHO <ggingmin@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^13.8.1",
+    "date-fns": "^2.29.3",
+    "discord.js": "^14.9.0",
     "dotenv": "^16.0.1"
   },
   "devDependencies": {
