@@ -37,4 +37,12 @@ module.exports = {
       ? `${tmp[2]}${tmp[1]}${tmp[0]}`
       : `${tmp[2]}-${tmp[1]}-${tmp[0]} ${tmp[3]}:${tmp[4]}`;
   },
+
+  /**
+   * 멤버가 해당 역할이 있는지 판별해주는 함수
+   * @param {import('discord.js').GuildMember} member 멤버변수
+   * @param {string} roleName 역할명
+   * @returns {boolean}
+   */
+  checkRole: (member, roleName) => member.roles.cache.some(v => v.name === roleName),
 };
